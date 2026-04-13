@@ -1,0 +1,34 @@
+dataset:
+  name: metr_la
+  num_nodes: 207
+  in_steps: 12
+  out_steps: 12
+  interval_min: 5
+  features: 1
+  split:
+    target_few_shot_days: 3
+    val_ratio: 0.1
+    test_ratio: 0.8
+transfer:
+  setting: excluded_in_current_release
+  role: not_used
+  enabled: false
+  note: "Current public setting uses only Chengdu and Shenzhen as sources for PeMS-BAY."
+model:
+  d_model: 128
+  d_state: 16
+  n_layers: 3
+  adapter_rank: 32
+  num_prototypes: 10
+  routing_temperature: 0.5
+  uncertainty_delta: 0.3
+train:
+  seed: 42
+  batch_size: 16
+  learning_rate: 1e-4
+  weight_decay: 1e-5
+  epochs: 100
+  early_stop_patience: 15
+eval:
+  horizons_min: [5, 15, 30]
+  metrics: [mae, rmse, mape]

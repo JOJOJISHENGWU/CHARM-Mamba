@@ -1,0 +1,25 @@
+dataset:
+  name: shenzhen
+  num_nodes: 627
+  in_steps: 12
+  out_steps: 12
+  interval_min: 10
+  features: 1
+transfer:
+  role: source
+  enabled: true
+  for_target: pems_bay
+  source_group: [chengdu, shenzhen]
+model:
+  d_model: 128
+  d_state: 16
+  n_layers: 3
+  adapter_rank: 32
+  num_prototypes: 10
+  routing_temperature: 0.5
+  uncertainty_delta: 0.3
+train:
+  seed: 42
+  batch_size: 16
+  learning_rate: 1e-4
+  weight_decay: 1e-5

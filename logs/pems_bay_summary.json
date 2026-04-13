@@ -1,0 +1,26 @@
+{
+  "run_id": "charm_pems_bay_seed42",
+  "dataset": "pems_bay",
+  "setting": "multi_source_to_single_target",
+  "sources": ["metr_la", "chengdu", "shenzhen"],
+  "target": "pems_bay",
+  "few_shot_days": 3,
+  "best_epoch": 100,
+  "best_val_15min": {
+    "mae": 0.8805,
+    "rmse": 2.4358,
+    "mape": 3.29
+  },
+  "test": {
+    "mae_5": 0.50,
+    "mae_15": 0.88,
+    "mae_30": 1.06,
+    "rmse_5": 1.16,
+    "rmse_15": 2.44,
+    "rmse_30": 2.94,
+    "mape_5": 1.79,
+    "mape_15": 3.30,
+    "mape_30": 4.51
+  },
+  "checkpoint": "checkpoints/pems_bay_best.pth"
+}

@@ -1,0 +1,23 @@
+{
+  "artifacts": [
+    {
+      "dataset": "pems_bay",
+      "checkpoint": "checkpoints/pems_bay_best.pth",
+      "config": "configs/pems_bay.yaml",
+      "seed": 42,
+      "best_epoch": 100,
+      "setting": "multi_source_to_single_target",
+      "sources": ["chengdu", "shenzhen"],
+      "expected_val_15min": {
+        "mae": 0.88,
+        "rmse": 2.44,
+        "mape": 3.30
+      },
+      "reference_test_horizons": {
+        "5min": {"mae": 0.50, "rmse": 1.16, "mape": 1.79},
+        "15min": {"mae": 0.88, "rmse": 2.44, "mape": 3.30},
+        "30min": {"mae": 1.06, "rmse": 2.94, "mape": 4.51}
+      }
+    }
+  ]
+}
