@@ -7,7 +7,7 @@
       "seed": 42,
       "best_epoch": 100,
       "setting": "multi_source_to_single_target",
-      "sources": ["chengdu", "shenzhen"],
+      "sources": ["metr_la", "chengdu", "shenzhen"],
       "expected_val_15min": {
         "mae": 0.88,
         "rmse": 2.44,

@@ -6,14 +6,14 @@ dataset:
   interval_min: 5
   features: 1
   split:
-    target_few_shot_days: 3
-    val_ratio: 0.1
-    test_ratio: 0.8
+    train_ratio: 0.7
+    val_ratio: 0.2
+    test_ratio: 0.1
 transfer:
-  setting: excluded_in_current_release
-  role: not_used
-  enabled: false
-  note: "Current public setting uses only Chengdu and Shenzhen as sources for PeMS-BAY."
+  setting: multi_source_to_single_target
+  role: source_domain
+  enabled: true
+  note: "Enabled as a source domain to match the paper setting (M, C, S -> PeMS-BAY)."
 model:
   d_model: 128
   d_state: 16

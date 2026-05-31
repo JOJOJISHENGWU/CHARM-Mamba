@@ -5,11 +5,16 @@ dataset:
   out_steps: 12
   interval_min: 10
   features: 1
+  split:
+    train_ratio: 0.7
+    val_ratio: 0.2
+    test_ratio: 0.1
 transfer:
-  role: source
+  setting: multi_source_to_single_target
+  role: source_domain
   enabled: true
   for_target: pems_bay
-  source_group: [chengdu, shenzhen]
+  source_group: [metr_la, chengdu, shenzhen]
 model:
   d_model: 128
   d_state: 16
@@ -23,3 +28,8 @@ train:
   batch_size: 16
   learning_rate: 1e-4
   weight_decay: 1e-5
+  epochs: 100
+  early_stop_patience: 15
+eval:
+  horizons_min: [10, 30, 60]
+  metrics: [mae, rmse, mape]

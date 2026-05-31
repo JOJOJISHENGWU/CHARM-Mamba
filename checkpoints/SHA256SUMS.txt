@@ -1,0 +1,5 @@
+# Fill with real SHA256 after checkpoint release.
+# Format:
+# <sha256>  <relative_path>
+# Example:
+# d2d2...  checkpoints/pems_bay_best.pth

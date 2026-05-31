@@ -7,14 +7,15 @@ dataset:
   features: 1
   split:
     target_few_shot_days: 3
-    val_ratio: 0.1
-    test_ratio: 0.8
+    train_ratio: 0.7
+    val_ratio: 0.2
+    test_ratio: 0.1
 transfer:
   setting: multi_source_to_single_target
-  source_domains: [chengdu, shenzhen]
-  source_domain_count: 2
+  source_domains: [metr_la, chengdu, shenzhen]
+  source_domain_count: 3
   target_domain: pems_bay
-  note: "Only Chengdu and Shenzhen are used as sources in this release."
+  note: "Official release follows the paper and uses METR-LA, Chengdu, and Shenzhen as sources."
 model:
   d_model: 128
   d_state: 16
